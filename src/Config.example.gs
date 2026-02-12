@@ -32,11 +32,36 @@ var CONFIG = {
     ]
   },
 
-  direct: {
-    token: "BEARER_TOKEN",
-    clientLogin: "your-client-login",
-    sheetName: "YD"
+direct: {
+  token: "BEARER_TOKEN",
+
+  reportSettings: {
+    reportName: "Direct Daily",
+    reportType: "CAMPAIGN_PERFORMANCE_REPORT",
+    dateRangeType: "CUSTOM_DATE",
+    format: "TSV",
+    includeVAT: "NO"
   },
+
+  dateFrom: "yesterday",
+  dateTo: "yesterday",
+
+  fieldNames: [
+    "CampaignName",
+    "CampaignId",
+    "Date",
+    "ClientLogin",
+    "Impressions",
+    "Clicks",
+    "Cost"
+  ],
+
+  accounts: [
+    { clientLogin: "client-login-1", sheetName: "YD1" },
+    { clientLogin: "client-login-2", sheetName: "YD2" }
+  ]
+}
+,
 
   mode: {
     append: true
