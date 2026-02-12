@@ -39,8 +39,3 @@ All dynamic parameters are stored in `Config.gs`:
 
 This repository contains an anonymized version of the scripts.  
 
----
-
-## Use Case
-
-Designed for marketing and product analytics teams who need automated daily reporting from Yandex platforms into Google Sheets.
