@@ -32,3 +32,16 @@ function toQueryString(params) {
   }
   return parts.join("&");
 }
+
+function resolveDate(value) {
+  if (!value) return Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "yyyy-MM-dd");
+
+  if (value === "yesterday") {
+    var today = new Date();
+    var y = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1);
+    return Utilities.formatDate(y, Session.getScriptTimeZone(), "yyyy-MM-dd");
+  }
+
+  return value; // если передана конкретная дата YYYY-MM-DD
+}
+
