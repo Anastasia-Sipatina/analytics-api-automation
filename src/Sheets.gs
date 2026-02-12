@@ -1,0 +1,23 @@
+function writeRows(sheetName, rows, append) {
+  if (!rows || rows.length === 0) return;
+
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(sheetName);
+  if (!sheet) sheet = ss.insertSheet(sheetName);
+
+  if (!append) sheet.clearContents();
+
+  var startRow = append ? sheet.getLastRow() + 1 : 1;
+  var numRows = rows.length;
+  var numCols = rows[0].length;
+
+  sheet.getRange(startRow, 1, numRows, numCols).setValues(rows);
+}
+
+function assertOk(response, context) {
+  var code = response.getResponseCode();
+  if (code >= 200 && code < 300) return;
+
+  var body = response.getContentText();
+  throw new Error(context + " failed. HTTP " + code + ". Body: " + body.slice(0, 500));
+}
