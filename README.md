@@ -34,16 +34,6 @@ All dynamic parameters are stored in `Config.gs`:
 
 ---
 
-## Setup
-
-1. Create a Google Spreadsheet.
-2. Open **Extensions → Apps Script**.
-3. Copy files from `/src` into your Apps Script project.
-4. Create `Config.gs` based on `Config.example.gs`.
-5. Fill in real tokens and identifiers.
-6. Run `runAll()` once and grant permissions.
-
----
 
 ## Security
 
