@@ -1,4 +1,4 @@
 function runAll() {
-  fetchMetrikaLastSign();
-  fetchDirectCampaignPerformance();
+  fetchYandexMetrika();
+  fetchDirectCampaign();
 }
